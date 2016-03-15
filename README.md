@@ -7,8 +7,8 @@ In this BugTracker app, a user can:
 - Edit existing bug reports
 - Delete existing bug reports
 
-### What should this BugTracker app look like?
-We'll post a video here shortly to demo its small list of capabilities.
+### How is this BugTracker app expected to behave?
+[Check out this video](https://youtu.be/PSXgUA1frrg) to see the finished app in action.
 
 ### What do I do to complete the challenge?
 You do the following:
@@ -37,7 +37,7 @@ In general:
 There are some portions of the project which we will not be judging.
 - **DON'T** worry about editing the templates. They may be useful to inspect, but they should already have everything you need.
 - **DON'T** worry about editing the css. Same as above.
-- **DON'T** worry about editing the server. The server is a one-off to simply serve the frontend javascript and to give it smething to talk to.
+- **DON'T** worry about editing the server. The server is a one-off to simply serve the frontend javascript and to give it something to talk to.
 
 ### What stack is being used in this project?
 This project relies on the following stack:
