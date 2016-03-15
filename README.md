@@ -24,7 +24,7 @@ You do the following:
 1. Clone this repo
 1. To install all dependencies and build the project, run `make`
 1. To start the node server, run `make server`. You should be able to view the app by visiting `localhost:3000` in your browser.
-1. To run the tests, run `make tests`. There will be a handful of starter tests which should pass.
+1. To run the tests, run `make test`. There will be a handful of starter tests which should pass.
 
 ### How will I be graded?
 We'll be looking at how much impementation is completed, the style in which it is written, and the testing which covers it.
