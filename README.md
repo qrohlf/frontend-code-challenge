@@ -14,7 +14,7 @@ In this BugTracker app, a user can:
 You do the following:
 
 1. Fork this repository
-1. Ensure you have `NodeJS` installed
+1. Ensure you have NodeJS 4.4.0 LTS (or equivalent) installed
 1. Ensure you have `make` installed
 1. Search the project for `@TODO` comments which describe the missing implementation
 1. Implement the missing pieces, and test the implementation
