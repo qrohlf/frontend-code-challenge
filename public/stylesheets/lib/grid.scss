@@ -1,0 +1,34 @@
+@mixin column($slotsUsed, $maxSlots) {
+  $slotsUsed: min($slotsUsed, $maxSlots);
+  display: inline-block;
+  width: #{ ($slotsUsed / $maxSlots) * 100 }%;
+}
+
+// Generate rules for general column configurations
+// e.g. <div class="column_1_3"></div>
+$maxSlotsToGenerate: 10;
+@each $size, $query in  ('l', 'screen'),
+                        ('m', '(max-width: 768px)'),
+                        ('s', '(max-width: 400px)') {
+  @media #{$query} {
+    @for $maxSlots from 1 through $maxSlotsToGenerate {
+      @for $currentSlot from 1 through $maxSlots {
+        .column_#{$size}_#{$currentSlot}_#{$maxSlots} {
+          @include column($currentSlot, $maxSlots);
+        }
+      }
+    }
+  }
+}
+
+.gridrow {
+  &::after {
+    content: ' ';
+    display: table;
+    clear: both;
+  }
+}
+
+.vert_middle {
+  vertical-align: middle;
+}

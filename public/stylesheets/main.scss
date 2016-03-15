@@ -1,0 +1,96 @@
+@import './lib/grid';
+@import './material_icons/material_icons';
+
+$borderColor: #bbb;
+
+body {
+  font-family: roboto, sans-serif;
+}
+
+.bug_collection {
+  border: 1px solid $borderColor;
+  margin: auto;
+  min-width: 600px;
+  width: 60%;
+
+  .header {
+    background-color: #444;
+    color: white;
+    padding: 0.5em 0.2em;
+
+    .js_refresh {
+      cursor: pointer;
+      float: right;
+      vertical-align: middle;
+    }
+  }
+
+  .new_bug_control {
+    padding: 0.5em 0.5em;
+
+    .message {
+      margin-right: 0.3em;
+    }
+    .js_add {
+      color: dodgerblue;
+      cursor: pointer;
+      font-size: 20pt;
+      vertical-align: middle;
+    }
+  }
+}
+
+.bug_item {
+  border-bottom: 1px solid $borderColor;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+
+  .bug_type {
+    color: #777;
+    font-size: 72pt;
+    text-align: center;
+    vertical-align: top;
+  }
+
+  .bug_remove, .bug_mode {
+    cursor: pointer;
+    font-size: 20pt;
+  }
+
+  .bug_remove {
+    color: tomato;
+    vertical-align: top;
+  }
+
+  .bug_mode {
+    color: dodgerblue;
+  }
+
+  .summary, .description {
+    margin: 0.5em 0;
+    width: 95%;
+  }
+
+  textarea.description {
+    height: 200px;
+  }
+
+  .description {
+    max-height: 200px;
+    overflow-y: scroll;
+    resize: none;
+  }
+
+  .bug_error_content {
+    background-color: firebrick;
+    border-radius: 4px;
+    color: white;
+    margin: 0.2em;
+    padding: 0.3em;
+
+    .bug_error {
+      margin-right: 0.5em;
+      vertical-align: middle;
+    }
+  }
+}

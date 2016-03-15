@@ -1,0 +1,34 @@
+{
+  "name": "frontend-code-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/server.js",
+  "scripts": {
+    "start": "make",
+    "test": "make test"
+  },
+  "author": "Kevin Garsjo",
+  "license": "ISC",
+  "dependencies": {
+    "backbone": "^1.3.2",
+    "backbone.marionette": "^2.4.4",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "jade-amd": "^0.2.3",
+    "jasmine": "^2.3.2",
+    "jasmine-core": "^2.3.4",
+    "jquery": "^2.2.1",
+    "karma": "^0.13.11",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "node-sass": "^3.4.2",
+    "phantomjs": "^1.9.18",
+    "requirejs": "^2.1.20",
+    "spin": "0.0.1",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "karma-requirejs": "^0.2.2"
+  }
+}
