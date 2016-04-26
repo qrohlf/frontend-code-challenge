@@ -2,6 +2,8 @@ var bodyParser = require('body-parser');
 var express = require('express');
 var jadeAmd = require('jade-amd');
 var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
 // Connect server-side template engine
 app.set('views', './app/views');
@@ -32,6 +34,7 @@ app.route('/api/bug')
     id++;
     bugs.push(req.body);
     res.send(req.body);
+    io.emit('change')
   });
 app.route('/api/bug/:id')
   .put(function (req, res) {
@@ -42,6 +45,7 @@ app.route('/api/bug/:id')
     });
     bugs.push(req.body);
     res.send(req.body);
+    io.emit('change')
   })
   .delete(function (req, res) {
     console.log('[DELETE]\t/api/bug/' + req.params.id);
@@ -50,9 +54,10 @@ app.route('/api/bug/:id')
       return element.id !== id;
     });
     res.send(true);
+    io.emit('change')
   });
 
 // Start server
-app.listen(3000, function () {
+http.listen(3000, function () {
   console.log('Server started on port 3000');
 });

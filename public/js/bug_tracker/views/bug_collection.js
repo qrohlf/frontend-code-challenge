@@ -3,8 +3,11 @@ define([
   'bug_tracker/models/bug',
   'bug_tracker/views/bug_item',
   'bug_tracker/views/templates/bug_collection.tpl',
-], function (Marionette, BugModel, BugItemView, BugCollectionTpl) {
+  'socket',
+], function (Marionette, BugModel, BugItemView, BugCollectionTpl, io) {
   'use strict';
+
+  var socket = io();
 
   var BugCollectionView = Marionette.CompositeView.extend({
     childView: BugItemView,
@@ -16,6 +19,7 @@ define([
       if (!this.collection) {
         throw new Error('BugCollectionView requires a collection');
       }
+      socket.on('change', this.refresh.bind(this))
     },
 
     events: {
