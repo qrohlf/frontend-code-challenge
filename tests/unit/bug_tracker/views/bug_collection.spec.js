@@ -16,7 +16,6 @@ define([
       expect(view).toBeDefined();
     });
 
-    // @TODO write tests to match the implementation :)
     describe('#addBug', function () {
       it('should add a bug to the collection', function () {
         expect(view.collection.length).toEqual(0);
