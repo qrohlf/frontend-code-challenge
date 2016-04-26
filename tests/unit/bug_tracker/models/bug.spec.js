@@ -13,7 +13,11 @@ define([
       expect(model).toBeDefined();
     });
 
-    // @TODO write tests to match the implementation :)
-
+    it('should validate summary', function () {
+      expect(model.isValid()).toBeFalsy();
+      expect(model.validationError).toEqual('Please provide a summary.');
+      model.set({summary: 'foobar'});
+      expect(model.isValid()).toBeTruthy();
+    })
   });
 });

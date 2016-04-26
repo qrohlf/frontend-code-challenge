@@ -7,6 +7,11 @@ define([
   var BugItemView = Marionette.ItemView.extend({
     template: BugItemTpl,
 
+    ui: {
+      summary: 'input.summary',
+      description: 'textarea.description',
+    },
+
     events: {
       'click .js_bug_edit': 'editBug',
       'click .js_bug_save': 'saveBug',
@@ -27,12 +32,25 @@ define([
       this.listenTo(this.model, 'invalid', this.showError);
     },
 
-    // @TODO implement functions to handle 'editBug'
-    // @TODO implement functions to handle 'saveBug'
-    // @TODO implement functions to handle 'removeBug'
+    editBug: function () {
+      this.model.set({editing: true});
+    },
 
-    // @TODO implement function to handle an 'invalid' event from the model
+    saveBug: function () {
+      this.model.save({
+        summary: this.ui.summary.val(),
+        description: this.ui.description.val(),
+        editing: false,
+      });
+    },
 
+    removeBug: function () {
+      this.model.destroy();
+    },
+
+    showError: function () {
+      this.render();
+    },
   });
 
   return BugItemView;

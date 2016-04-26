@@ -4,6 +4,7 @@ define([
   'use strict';
 
   var BugModel = Backbone.Model.extend({
+    urlRoot: '/api/bug',
     defaults: function () {
       return {
         summary: '',
@@ -12,7 +13,11 @@ define([
       };
     },
 
-    // @TODO Validate that this model's summary is set
+    validate: function (attrs) {
+      if (!attrs.summary.length > 0) {
+        return 'Please provide a summary.';
+      }
+    },
   });
 
   return BugModel;

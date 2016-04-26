@@ -23,9 +23,14 @@ define([
       'click .js_refresh': 'refresh',
     },
 
-    // @TODO implement functions to handle 'addBug'
-    // @TODO implement functions to handle 'refresh'
+    addBug: function () {
+      var bug = new BugModel();
+      this.collection.push(bug);
+    },
 
+    refresh: function () {
+      this.collection.fetch();
+    },
   });
 
   return BugCollectionView;
